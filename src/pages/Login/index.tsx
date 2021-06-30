@@ -15,7 +15,10 @@ export default function SplashPage() {
     <SafeAreaView>
       <Container>
         <BannerWrapper>
-          <BannerImage source={require('../../assets/images/banner.png')} />
+          <BannerImage
+            source={require('../../assets/images/banner.png')}
+            resizeMode="contain"
+          />
         </BannerWrapper>
         <TitleText>
           <Text style={{fontWeight: 'bold'}}>Find </Text>
