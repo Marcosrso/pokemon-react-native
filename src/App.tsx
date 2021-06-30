@@ -3,9 +3,9 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {ThemeProvider} from 'styled-components/native';
-import LightTheme from './styles/themes/light';
+import {LightTheme} from './styles';
 
-import Landing from './pages/Landing';
+import Login from './pages/Login';
 import {useState} from 'react';
 
 const Stack = createStackNavigator();
@@ -16,10 +16,10 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Landing">
+        <Stack.Navigator initialRouteName="Login">
           <Stack.Screen
-            name="Landing"
-            component={Landing}
+            name="Login"
+            component={Login}
             options={{headerShown: false}}
           />
         </Stack.Navigator>
