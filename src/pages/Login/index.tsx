@@ -1,5 +1,7 @@
 import React from 'react';
 import {Text, SafeAreaView} from 'react-native';
+import auth from '@react-native-firebase/auth';
+import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import {
   Container,
   BannerWrapper,
@@ -11,6 +13,12 @@ import {
 } from './styles';
 
 export default function LoginPage() {
+  const onGoogleButtonPress = async () => {
+    const {idToken} = await GoogleSignin.signIn();
+    const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+    return auth().signInWithCredential(googleCredential);
+  };
+
   return (
     <SafeAreaView>
       <Container>
@@ -29,7 +37,12 @@ export default function LoginPage() {
           You can know the type of Pokemon, it's strengths, disadvantages and
           abilities.
         </DescriptionText>
-        <SignInButton onPress={() => console.log('Click')}>
+        <SignInButton
+          onPress={() =>
+            onGoogleButtonPress().then(() =>
+              console.log('Signed in with Google!'),
+            )
+          }>
           <SignInButtonLabel>Entrar com Google</SignInButtonLabel>
         </SignInButton>
       </Container>

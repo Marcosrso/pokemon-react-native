@@ -7,6 +7,12 @@ import {LightTheme} from './styles';
 
 import Login from './pages/Login';
 import {useState} from 'react';
+import {GoogleSignin} from '@react-native-google-signin/google-signin';
+
+GoogleSignin.configure({
+  webClientId:
+    '899902241807-86hlhvb5ovqglhg1vkunj4dph85ouu60.apps.googleusercontent.com',
+});
 
 const Stack = createStackNavigator();
 

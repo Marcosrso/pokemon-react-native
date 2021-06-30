@@ -132,7 +132,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.pokedex"
+        applicationId "com.ruivo.podekex"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
