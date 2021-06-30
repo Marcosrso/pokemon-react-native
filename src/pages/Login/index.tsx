@@ -10,7 +10,7 @@ import {
   SignInButtonLabel,
 } from './styles';
 
-export default function SplashPage() {
+export default function LoginPage() {
   return (
     <SafeAreaView>
       <Container>
